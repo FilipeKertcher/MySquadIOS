@@ -3,20 +3,160 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC51596824C5144F001F550F /* MySquad.h in Headers */ = {isa = PBXBuildFile; fileRef = EC51596624C5144F001F550F /* MySquad.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC11B2D224CE2F7F00CEC1A2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EC11B2D124CE2F7F00CEC1A2 /* Alamofire */; };
+		EC11B2D424CE4BC000CEC1A2 /* AlamoFireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC11B2D324CE4BC000CEC1A2 /* AlamoFireAdapter.swift */; };
+		EC11B2D824CE4C9E00CEC1A2 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC11B2D724CE4C9E00CEC1A2 /* URLProtocolStub.swift */; };
+		EC11B2E024CE4FBD00CEC1A2 /* addAccountIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC11B2DF24CE4FBD00CEC1A2 /* addAccountIntegrationTests.swift */; };
+		EC11B2E224CE4FBD00CEC1A2 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC51599124C515E2001F550F /* Data.framework */; };
+		EC51597C24C5149A001F550F /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51597B24C5149A001F550F /* AddAccount.swift */; };
+		EC51597E24C51522001F550F /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51597D24C51522001F550F /* AccountModel.swift */; };
+		EC51599A24C515E2001F550F /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC51599124C515E2001F550F /* Data.framework */; };
+		EC51599F24C515E2001F550F /* RemoteAddAccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51599E24C515E2001F550F /* RemoteAddAccountTests.swift */; };
+		EC5159A924C51629001F550F /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC51597324C51486001F550F /* Domain.framework */; };
+		EC5159AA24C51629001F550F /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC51597324C51486001F550F /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ECD7644824C5239900FA75CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7644724C5239900FA75CB /* Model.swift */; };
+		ECD7644C24C5246F00FA75CB /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7644B24C5246F00FA75CB /* HttpPostClient.swift */; };
+		ECD7645224C52BD200FA75CB /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7644B24C5246F00FA75CB /* HttpPostClient.swift */; };
+		ECD7645324C52BD400FA75CB /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7644924C5240500FA75CB /* RemoteAddAccount.swift */; };
+		ECD7645424C52C6000FA75CB /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7644924C5240500FA75CB /* RemoteAddAccount.swift */; };
+		ECD7645724C52CA700FA75CB /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7645624C52CA700FA75CB /* DomainError.swift */; };
+		ECF9D45724C5308400C7800A /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9D45624C5308400C7800A /* HttpError.swift */; };
+		ECF9D45824C531FC00C7800A /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9D45624C5308400C7800A /* HttpError.swift */; };
+		ECF9D45B24C541A800C7800A /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9D45A24C541A800C7800A /* ExtensionHelpers.swift */; };
+		ECF9D45C24C5430400C7800A /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9D45A24C541A800C7800A /* ExtensionHelpers.swift */; };
+		ECF9D45F24CE2AD100C7800A /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9D45E24CE2AD100C7800A /* TestFactories.swift */; };
+		ECF9D46224CE2B1C00C7800A /* Spy.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9D46124CE2B1C00C7800A /* Spy.swift */; };
+		ECF9D46424CE2B7000C7800A /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9D46324CE2B7000C7800A /* AccountModelFactory.swift */; };
+		ECF9D47324CE2C7500C7800A /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF9D46A24CE2C7400C7800A /* Infra.framework */; };
+		ECF9D47824CE2C7500C7800A /* AlamoFireAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9D47724CE2C7500C7800A /* AlamoFireAdapterTests.swift */; };
+		ECF9D48124CE2E0E00C7800A /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC51599124C515E2001F550F /* Data.framework */; };
+		ECF9D48224CE2E0E00C7800A /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC51599124C515E2001F550F /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ECF9D48624CE2E3100C7800A /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9D45E24CE2AD100C7800A /* TestFactories.swift */; };
+		ECF9D48724CE2E3400C7800A /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9D46324CE2B7000C7800A /* AccountModelFactory.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		EC11B2E324CE4FBD00CEC1A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC51595A24C5144F001F550F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC51599024C515E2001F550F;
+			remoteInfo = Data;
+		};
+		EC11B2E824CE4FE300CEC1A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC51595A24C5144F001F550F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECF9D46924CE2C7400C7800A;
+			remoteInfo = Infra;
+		};
+		EC11B2EA24CE4FEB00CEC1A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC51595A24C5144F001F550F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC51597224C51486001F550F;
+			remoteInfo = Domain;
+		};
+		EC51599B24C515E2001F550F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC51595A24C5144F001F550F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC51599024C515E2001F550F;
+			remoteInfo = Data;
+		};
+		EC5159AB24C51629001F550F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC51595A24C5144F001F550F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC51597224C51486001F550F;
+			remoteInfo = Domain;
+		};
+		ECF9D47424CE2C7500C7800A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC51595A24C5144F001F550F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECF9D46924CE2C7400C7800A;
+			remoteInfo = Infra;
+		};
+		ECF9D48324CE2E0E00C7800A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC51595A24C5144F001F550F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC51599024C515E2001F550F;
+			remoteInfo = Data;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EC5159AD24C5162A001F550F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EC5159AA24C51629001F550F /* Domain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECF9D48524CE2E0E00C7800A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ECF9D48224CE2E0E00C7800A /* Data.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		EC11B2D324CE4BC000CEC1A2 /* AlamoFireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireAdapter.swift; sourceTree = "<group>"; };
+		EC11B2D724CE4C9E00CEC1A2 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
+		EC11B2DD24CE4FBD00CEC1A2 /* UseCasesIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UseCasesIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC11B2DF24CE4FBD00CEC1A2 /* addAccountIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addAccountIntegrationTests.swift; sourceTree = "<group>"; };
+		EC11B2E124CE4FBD00CEC1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC51596324C5144F001F550F /* MySquad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MySquad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC51596624C5144F001F550F /* MySquad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySquad.h; sourceTree = "<group>"; };
-		EC51596724C5144F001F550F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC51597324C51486001F550F /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC51597624C51486001F550F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC51597B24C5149A001F550F /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
+		EC51597D24C51522001F550F /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		EC51599124C515E2001F550F /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC51599424C515E2001F550F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC51599924C515E2001F550F /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC51599E24C515E2001F550F /* RemoteAddAccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccountTests.swift; sourceTree = "<group>"; };
+		EC5159A024C515E2001F550F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECD7644724C5239900FA75CB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		ECD7644924C5240500FA75CB /* RemoteAddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccount.swift; sourceTree = "<group>"; };
+		ECD7644B24C5246F00FA75CB /* HttpPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClient.swift; sourceTree = "<group>"; };
+		ECD7645624C52CA700FA75CB /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
+		ECF9D45624C5308400C7800A /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
+		ECF9D45A24C541A800C7800A /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
+		ECF9D45E24CE2AD100C7800A /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
+		ECF9D46124CE2B1C00C7800A /* Spy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spy.swift; sourceTree = "<group>"; };
+		ECF9D46324CE2B7000C7800A /* AccountModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModelFactory.swift; sourceTree = "<group>"; };
+		ECF9D46A24CE2C7400C7800A /* Infra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECF9D46D24CE2C7500C7800A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECF9D47224CE2C7500C7800A /* InfraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECF9D47724CE2C7500C7800A /* AlamoFireAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireAdapterTests.swift; sourceTree = "<group>"; };
+		ECF9D47924CE2C7500C7800A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EC11B2DA24CE4FBD00CEC1A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC11B2E224CE4FBD00CEC1A2 /* Data.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC51596024C5144F001F550F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -24,14 +164,86 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC51597024C51486001F550F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC51598E24C515E2001F550F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC5159A924C51629001F550F /* Domain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC51599624C515E2001F550F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC51599A24C515E2001F550F /* Data.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECF9D46724CE2C7400C7800A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF9D48124CE2E0E00C7800A /* Data.framework in Frameworks */,
+				EC11B2D224CE2F7F00CEC1A2 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECF9D46F24CE2C7500C7800A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF9D47324CE2C7500C7800A /* Infra.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC11B2D524CE4C1300CEC1A2 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				EC11B2D324CE4BC000CEC1A2 /* AlamoFireAdapter.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		EC11B2D624CE4C8A00CEC1A2 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				ECF9D47724CE2C7500C7800A /* AlamoFireAdapterTests.swift */,
+				EC11B2D724CE4C9E00CEC1A2 /* URLProtocolStub.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		EC11B2DE24CE4FBD00CEC1A2 /* UseCasesIntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC11B2DF24CE4FBD00CEC1A2 /* addAccountIntegrationTests.swift */,
+				EC11B2E124CE4FBD00CEC1A2 /* Info.plist */,
+			);
+			path = UseCasesIntegrationTests;
+			sourceTree = "<group>";
+		};
 		EC51595924C5144F001F550F = {
 			isa = PBXGroup;
 			children = (
-				EC51596524C5144F001F550F /* MySquad */,
+				EC51597424C51486001F550F /* Domain */,
+				EC51599224C515E2001F550F /* Data */,
+				EC51599D24C515E2001F550F /* DataTests */,
+				ECF9D46B24CE2C7500C7800A /* Infra */,
+				ECF9D47624CE2C7500C7800A /* InfraTests */,
+				EC11B2DE24CE4FBD00CEC1A2 /* UseCasesIntegrationTests */,
 				EC51596424C5144F001F550F /* Products */,
+				EC5159A824C51629001F550F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -39,17 +251,147 @@
 			isa = PBXGroup;
 			children = (
 				EC51596324C5144F001F550F /* MySquad.framework */,
+				EC51597324C51486001F550F /* Domain.framework */,
+				EC51599124C515E2001F550F /* Data.framework */,
+				EC51599924C515E2001F550F /* DataTests.xctest */,
+				ECF9D46A24CE2C7400C7800A /* Infra.framework */,
+				ECF9D47224CE2C7500C7800A /* InfraTests.xctest */,
+				EC11B2DD24CE4FBD00CEC1A2 /* UseCasesIntegrationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EC51596524C5144F001F550F /* MySquad */ = {
+		EC51597424C51486001F550F /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				EC51596624C5144F001F550F /* MySquad.h */,
-				EC51596724C5144F001F550F /* Info.plist */,
+				ECD7645524C52C9400FA75CB /* Errors */,
+				ECD7644D24C524DA00FA75CB /* UseCases */,
+				ECD7644E24C524E300FA75CB /* Models */,
+				EC51597624C51486001F550F /* Info.plist */,
 			);
-			path = MySquad;
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		EC51599224C515E2001F550F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				ECF9D45924C5419D00C7800A /* Helpers */,
+				ECD7644F24C524F600FA75CB /* UseCases */,
+				ECD7645024C5250A00FA75CB /* Http */,
+				EC51599424C515E2001F550F /* Info.plist */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		EC51599D24C515E2001F550F /* DataTests */ = {
+			isa = PBXGroup;
+			children = (
+				ECF9D45D24CE2ABD00C7800A /* Helpers */,
+				ECD7645124C5251C00FA75CB /* UseCases */,
+				ECF9D46024CE2B0600C7800A /* Http */,
+				EC5159A024C515E2001F550F /* Info.plist */,
+			);
+			path = DataTests;
+			sourceTree = "<group>";
+		};
+		EC5159A824C51629001F550F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECD7644D24C524DA00FA75CB /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				EC51597B24C5149A001F550F /* AddAccount.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		ECD7644E24C524E300FA75CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC51597D24C51522001F550F /* AccountModel.swift */,
+				ECD7644724C5239900FA75CB /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ECD7644F24C524F600FA75CB /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				ECD7644924C5240500FA75CB /* RemoteAddAccount.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		ECD7645024C5250A00FA75CB /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				ECD7644B24C5246F00FA75CB /* HttpPostClient.swift */,
+				ECF9D45624C5308400C7800A /* HttpError.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		ECD7645124C5251C00FA75CB /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				EC51599E24C515E2001F550F /* RemoteAddAccountTests.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		ECD7645524C52C9400FA75CB /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				ECD7645624C52CA700FA75CB /* DomainError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		ECF9D45924C5419D00C7800A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ECF9D45A24C541A800C7800A /* ExtensionHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		ECF9D45D24CE2ABD00C7800A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ECF9D45E24CE2AD100C7800A /* TestFactories.swift */,
+				ECF9D46324CE2B7000C7800A /* AccountModelFactory.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		ECF9D46024CE2B0600C7800A /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				ECF9D46124CE2B1C00C7800A /* Spy.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		ECF9D46B24CE2C7500C7800A /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				EC11B2D524CE4C1300CEC1A2 /* Http */,
+				ECF9D46D24CE2C7500C7800A /* Info.plist */,
+			);
+			path = Infra;
+			sourceTree = "<group>";
+		};
+		ECF9D47624CE2C7500C7800A /* InfraTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC11B2D624CE4C8A00CEC1A2 /* Http */,
+				ECF9D47924CE2C7500C7800A /* Info.plist */,
+			);
+			path = InfraTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,13 +401,53 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC51596824C5144F001F550F /* MySquad.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC51596E24C51486001F550F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC51598C24C515E2001F550F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECF9D46524CE2C7400C7800A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		EC11B2DC24CE4FBD00CEC1A2 /* UseCasesIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC11B2E524CE4FBD00CEC1A2 /* Build configuration list for PBXNativeTarget "UseCasesIntegrationTests" */;
+			buildPhases = (
+				EC11B2D924CE4FBD00CEC1A2 /* Sources */,
+				EC11B2DA24CE4FBD00CEC1A2 /* Frameworks */,
+				EC11B2DB24CE4FBD00CEC1A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC11B2EB24CE4FEB00CEC1A2 /* PBXTargetDependency */,
+				EC11B2E424CE4FBD00CEC1A2 /* PBXTargetDependency */,
+				EC11B2E924CE4FE300CEC1A2 /* PBXTargetDependency */,
+			);
+			name = UseCasesIntegrationTests;
+			productName = UseCasesIntegrationTests;
+			productReference = EC11B2DD24CE4FBD00CEC1A2 /* UseCasesIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		EC51596224C5144F001F550F /* MySquad */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC51596B24C5144F001F550F /* Build configuration list for PBXNativeTarget "MySquad" */;
@@ -84,16 +466,135 @@
 			productReference = EC51596324C5144F001F550F /* MySquad.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		EC51597224C51486001F550F /* Domain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC51597824C51486001F550F /* Build configuration list for PBXNativeTarget "Domain" */;
+			buildPhases = (
+				EC51596E24C51486001F550F /* Headers */,
+				EC51596F24C51486001F550F /* Sources */,
+				EC51597024C51486001F550F /* Frameworks */,
+				EC51597124C51486001F550F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Domain;
+			productName = Domain;
+			productReference = EC51597324C51486001F550F /* Domain.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EC51599024C515E2001F550F /* Data */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC5159A224C515E2001F550F /* Build configuration list for PBXNativeTarget "Data" */;
+			buildPhases = (
+				EC51598C24C515E2001F550F /* Headers */,
+				EC51598D24C515E2001F550F /* Sources */,
+				EC51598E24C515E2001F550F /* Frameworks */,
+				EC51598F24C515E2001F550F /* Resources */,
+				EC5159AD24C5162A001F550F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC5159AC24C51629001F550F /* PBXTargetDependency */,
+			);
+			name = Data;
+			productName = Data;
+			productReference = EC51599124C515E2001F550F /* Data.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EC51599824C515E2001F550F /* DataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC5159A524C515E2001F550F /* Build configuration list for PBXNativeTarget "DataTests" */;
+			buildPhases = (
+				EC51599524C515E2001F550F /* Sources */,
+				EC51599624C515E2001F550F /* Frameworks */,
+				EC51599724C515E2001F550F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC51599C24C515E2001F550F /* PBXTargetDependency */,
+			);
+			name = DataTests;
+			productName = DataTests;
+			productReference = EC51599924C515E2001F550F /* DataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ECF9D46924CE2C7400C7800A /* Infra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECF9D47B24CE2C7500C7800A /* Build configuration list for PBXNativeTarget "Infra" */;
+			buildPhases = (
+				ECF9D46524CE2C7400C7800A /* Headers */,
+				ECF9D46624CE2C7400C7800A /* Sources */,
+				ECF9D46724CE2C7400C7800A /* Frameworks */,
+				ECF9D46824CE2C7400C7800A /* Resources */,
+				ECF9D48524CE2E0E00C7800A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECF9D48424CE2E0E00C7800A /* PBXTargetDependency */,
+			);
+			name = Infra;
+			packageProductDependencies = (
+				EC11B2D124CE2F7F00CEC1A2 /* Alamofire */,
+			);
+			productName = Infra;
+			productReference = ECF9D46A24CE2C7400C7800A /* Infra.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ECF9D47124CE2C7500C7800A /* InfraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECF9D47E24CE2C7500C7800A /* Build configuration list for PBXNativeTarget "InfraTests" */;
+			buildPhases = (
+				ECF9D46E24CE2C7500C7800A /* Sources */,
+				ECF9D46F24CE2C7500C7800A /* Frameworks */,
+				ECF9D47024CE2C7500C7800A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECF9D47524CE2C7500C7800A /* PBXTargetDependency */,
+			);
+			name = InfraTests;
+			productName = InfraTests;
+			productReference = ECF9D47224CE2C7500C7800A /* InfraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		EC51595A24C5144F001F550F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Filipe Kertcher";
 				TargetAttributes = {
+					EC11B2DC24CE4FBD00CEC1A2 = {
+						CreatedOnToolsVersion = 11.3;
+					};
 					EC51596224C5144F001F550F = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					EC51597224C51486001F550F = {
+						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
+					};
+					EC51599024C515E2001F550F = {
+						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
+					};
+					EC51599824C515E2001F550F = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					ECF9D46924CE2C7400C7800A = {
+						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
+					};
+					ECF9D47124CE2C7500C7800A = {
 						CreatedOnToolsVersion = 11.3;
 					};
 				};
@@ -107,17 +608,68 @@
 				Base,
 			);
 			mainGroup = EC51595924C5144F001F550F;
+			packageReferences = (
+				EC11B2D024CE2F7F00CEC1A2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = EC51596424C5144F001F550F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				EC51596224C5144F001F550F /* MySquad */,
+				EC51597224C51486001F550F /* Domain */,
+				EC51599024C515E2001F550F /* Data */,
+				EC51599824C515E2001F550F /* DataTests */,
+				ECF9D46924CE2C7400C7800A /* Infra */,
+				ECF9D47124CE2C7500C7800A /* InfraTests */,
+				EC11B2DC24CE4FBD00CEC1A2 /* UseCasesIntegrationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EC11B2DB24CE4FBD00CEC1A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC51596124C5144F001F550F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC51597124C51486001F550F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC51598F24C515E2001F550F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC51599724C515E2001F550F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECF9D46824CE2C7400C7800A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECF9D47024CE2C7500C7800A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -127,6 +679,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EC11B2D924CE4FBD00CEC1A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC11B2E024CE4FBD00CEC1A2 /* addAccountIntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC51595F24C5144F001F550F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,9 +694,143 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC51596F24C51486001F550F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECD7644824C5239900FA75CB /* Model.swift in Sources */,
+				EC51597C24C5149A001F550F /* AddAccount.swift in Sources */,
+				ECD7645724C52CA700FA75CB /* DomainError.swift in Sources */,
+				EC51597E24C51522001F550F /* AccountModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC51598D24C515E2001F550F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECD7645424C52C6000FA75CB /* RemoteAddAccount.swift in Sources */,
+				ECF9D45724C5308400C7800A /* HttpError.swift in Sources */,
+				ECD7644C24C5246F00FA75CB /* HttpPostClient.swift in Sources */,
+				ECF9D45B24C541A800C7800A /* ExtensionHelpers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC51599524C515E2001F550F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF9D45F24CE2AD100C7800A /* TestFactories.swift in Sources */,
+				ECF9D45824C531FC00C7800A /* HttpError.swift in Sources */,
+				ECF9D46424CE2B7000C7800A /* AccountModelFactory.swift in Sources */,
+				ECF9D46224CE2B1C00C7800A /* Spy.swift in Sources */,
+				ECD7645324C52BD400FA75CB /* RemoteAddAccount.swift in Sources */,
+				ECD7645224C52BD200FA75CB /* HttpPostClient.swift in Sources */,
+				ECF9D45C24C5430400C7800A /* ExtensionHelpers.swift in Sources */,
+				EC51599F24C515E2001F550F /* RemoteAddAccountTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECF9D46624CE2C7400C7800A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC11B2D424CE4BC000CEC1A2 /* AlamoFireAdapter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECF9D46E24CE2C7500C7800A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF9D48624CE2E3100C7800A /* TestFactories.swift in Sources */,
+				ECF9D47824CE2C7500C7800A /* AlamoFireAdapterTests.swift in Sources */,
+				ECF9D48724CE2E3400C7800A /* AccountModelFactory.swift in Sources */,
+				EC11B2D824CE4C9E00CEC1A2 /* URLProtocolStub.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		EC11B2E424CE4FBD00CEC1A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC51599024C515E2001F550F /* Data */;
+			targetProxy = EC11B2E324CE4FBD00CEC1A2 /* PBXContainerItemProxy */;
+		};
+		EC11B2E924CE4FE300CEC1A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECF9D46924CE2C7400C7800A /* Infra */;
+			targetProxy = EC11B2E824CE4FE300CEC1A2 /* PBXContainerItemProxy */;
+		};
+		EC11B2EB24CE4FEB00CEC1A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC51597224C51486001F550F /* Domain */;
+			targetProxy = EC11B2EA24CE4FEB00CEC1A2 /* PBXContainerItemProxy */;
+		};
+		EC51599C24C515E2001F550F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC51599024C515E2001F550F /* Data */;
+			targetProxy = EC51599B24C515E2001F550F /* PBXContainerItemProxy */;
+		};
+		EC5159AC24C51629001F550F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC51597224C51486001F550F /* Domain */;
+			targetProxy = EC5159AB24C51629001F550F /* PBXContainerItemProxy */;
+		};
+		ECF9D47524CE2C7500C7800A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECF9D46924CE2C7400C7800A /* Infra */;
+			targetProxy = ECF9D47424CE2C7500C7800A /* PBXContainerItemProxy */;
+		};
+		ECF9D48424CE2E0E00C7800A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC51599024C515E2001F550F /* Data */;
+			targetProxy = ECF9D48324CE2E0E00C7800A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		EC11B2E624CE4FBD00CEC1A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				INFOPLIST_FILE = UseCasesIntegrationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.UseCasesIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EC11B2E724CE4FBD00CEC1A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				INFOPLIST_FILE = UseCasesIntegrationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.UseCasesIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		EC51596924C5144F001F550F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -305,9 +999,267 @@
 			};
 			name = Release;
 		};
+		EC51597924C51486001F550F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Domain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.Domain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EC51597A24C51486001F550F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Domain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.Domain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		EC5159A324C515E2001F550F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Data/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.Data;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EC5159A424C515E2001F550F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Data/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.Data;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		EC5159A624C515E2001F550F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				INFOPLIST_FILE = DataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.DataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EC5159A724C515E2001F550F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				INFOPLIST_FILE = DataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.DataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ECF9D47C24CE2C7500C7800A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Infra/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.Infra;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ECF9D47D24CE2C7500C7800A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Infra/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.Infra;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ECF9D47F24CE2C7500C7800A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				INFOPLIST_FILE = InfraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.InfraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ECF9D48024CE2C7500C7800A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				INFOPLIST_FILE = InfraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.InfraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EC11B2E524CE4FBD00CEC1A2 /* Build configuration list for PBXNativeTarget "UseCasesIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC11B2E624CE4FBD00CEC1A2 /* Debug */,
+				EC11B2E724CE4FBD00CEC1A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EC51595D24C5144F001F550F /* Build configuration list for PBXProject "MySquad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -326,7 +1278,71 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		EC51597824C51486001F550F /* Build configuration list for PBXNativeTarget "Domain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC51597924C51486001F550F /* Debug */,
+				EC51597A24C51486001F550F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC5159A224C515E2001F550F /* Build configuration list for PBXNativeTarget "Data" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC5159A324C515E2001F550F /* Debug */,
+				EC5159A424C515E2001F550F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC5159A524C515E2001F550F /* Build configuration list for PBXNativeTarget "DataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC5159A624C515E2001F550F /* Debug */,
+				EC5159A724C515E2001F550F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECF9D47B24CE2C7500C7800A /* Build configuration list for PBXNativeTarget "Infra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECF9D47C24CE2C7500C7800A /* Debug */,
+				ECF9D47D24CE2C7500C7800A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECF9D47E24CE2C7500C7800A /* Build configuration list for PBXNativeTarget "InfraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECF9D47F24CE2C7500C7800A /* Debug */,
+				ECF9D48024CE2C7500C7800A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EC11B2D024CE2F7F00CEC1A2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC11B2D124CE2F7F00CEC1A2 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC11B2D024CE2F7F00CEC1A2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EC51595A24C5144F001F550F /* Project object */;
 }
