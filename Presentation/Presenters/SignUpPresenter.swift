@@ -11,15 +11,19 @@ import Foundation
 public final class SignUpPresenter {
     
     private let alertView: AlertView
+    private let emailValidator :EmailValidator
     
-   public init(alertView:AlertView) {
+    public init(alertView:AlertView,emailValidator:EmailValidator) {
         self.alertView = alertView
+        self.emailValidator = emailValidator
     }
     
     public func signup(viewModel:SignupViewModel){
         if let (title, message) = validate(viewModel: viewModel) {
             alertView.showMessage(viewModel:AlertViewModel(title:title,message:message))
         }
+        
+       
     }
     
     private func validate(viewModel: SignupViewModel) -> (title:String,message:String)? {
@@ -38,6 +42,8 @@ public final class SignUpPresenter {
         else if viewModel.socialMediaType == nil || viewModel.socialMediaType!.isEmpty {
             return (title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social")
          }
+        
+        _ = emailValidator.isValid(email:viewModel.email!) 
         
         return nil
     }

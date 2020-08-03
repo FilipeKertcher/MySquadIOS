@@ -16,7 +16,7 @@ class SignUpPresenterTests: XCTestCase {
     func test_signup_show_error_mesasge_if_name_is_not_provided() {
         
         
-        let (sut,alertViewSpy) = makeSut()
+        let (sut,alertViewSpy,_) = makeSut()
         let signUpViewModel = SignupViewModel(email:"facebook",socialMediaToken:"123",socialMediaType: "facebook")
         
         sut.signup(viewModel: signUpViewModel)
@@ -27,7 +27,7 @@ class SignUpPresenterTests: XCTestCase {
     func test_signup_show_error_mesasge_if_email_is_not_provided() {
         
         
-        let (sut,alertViewSpy) = makeSut()
+        let (sut,alertViewSpy,_) = makeSut()
         let signUpViewModel = SignupViewModel(name:"Filipe Kertcher",socialMediaToken:"123", socialMediaType:"facebook")
         
         sut.signup(viewModel: signUpViewModel)
@@ -38,7 +38,7 @@ class SignUpPresenterTests: XCTestCase {
     func test_signup_show_error_mesasge_if_social_media_token_is_not_provided() {
         
         
-        let (sut,alertViewSpy) = makeSut()
+        let (sut,alertViewSpy,_) = makeSut()
         let signUpViewModel = SignupViewModel(name:"Filipe Kertcher",email:"filipe@email.com", socialMediaType:"facebook")
         
         sut.signup(viewModel: signUpViewModel)
@@ -46,15 +46,15 @@ class SignUpPresenterTests: XCTestCase {
         XCTAssertEqual(alertViewSpy.viewModel,AlertViewModel(title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social"))
     }
 
-    func test_signup_show_error_mesasge_if_social_media_type_is_not_provided() {
+    func test_signup_show_call_email_validator_with_correct_email() {
         
         
-        let (sut,alertViewSpy) = makeSut()
-        let signUpViewModel = SignupViewModel(name:"Filipe Kertcher",email:"filipe@email.com", socialMediaToken: "123")
+        let (sut, _, emailValidatorSpy) = makeSut()
+        let signUpViewModel = SignupViewModel(name:"Filipe Kertcher",email:"filipe@email.com", socialMediaToken: "123",socialMediaType:"facebook")
         
         sut.signup(viewModel: signUpViewModel)
         
-        XCTAssertEqual(alertViewSpy.viewModel,AlertViewModel(title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social"))
+        XCTAssertEqual(emailValidatorSpy.email,signUpViewModel.email)
     }
 
 }
@@ -62,12 +62,13 @@ class SignUpPresenterTests: XCTestCase {
 extension SignUpPresenterTests {
     
     
-    func makeSut() -> (sut:SignUpPresenter, alertViewSpy: AlertViewSpy){
+    func makeSut() -> (sut:SignUpPresenter, alertViewSpy: AlertViewSpy,emailValidatorSpy:EmailValidatorSpy){
         let alertViewSpy = AlertViewSpy()
-        let sut = SignUpPresenter(alertView: alertViewSpy )
-        
+        let emailValidatorSpy = EmailValidatorSpy()
+        let sut = SignUpPresenter(alertView: alertViewSpy,emailValidator:emailValidatorSpy )
+       
         return (
-            sut,alertViewSpy
+            sut,alertViewSpy,emailValidatorSpy
         )
     }
     
@@ -80,8 +81,15 @@ extension SignUpPresenterTests {
             self.viewModel = viewModel
         }
         
+    }
+    
+    class EmailValidatorSpy : EmailValidator {
+        var isValid = true
+        var email : String?
         
-        
-        
+        func isValid(email:String) -> Bool {
+            self.email = email
+            return isValid
+        }
     }
 }
