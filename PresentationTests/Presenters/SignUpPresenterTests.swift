@@ -21,7 +21,7 @@ class SignUpPresenterTests: XCTestCase {
         
         sut.signup(viewModel: makeSignupViewModel(name:nil))
         
-        XCTAssertEqual(alertViewSpy.viewModel,AlertViewModel(title:"Falha na validação",message:"O Campo nome é obrigatório"))
+        XCTAssertEqual(alertViewSpy.viewModel,makeAlertViewModel(message:"O Campo nome é obrigatório"))
     }
     
     func test_signup_show_error_mesasge_if_email_is_not_provided() {
@@ -33,7 +33,7 @@ class SignUpPresenterTests: XCTestCase {
         
         sut.signup(viewModel: makeSignupViewModel(email:nil))
         
-        XCTAssertEqual(alertViewSpy.viewModel,AlertViewModel(title:"Falha na validação",message:"O Campo email é obrigatório"))
+        XCTAssertEqual(alertViewSpy.viewModel,makeAlertViewModel(message:"O Campo email é obrigatório"))
     }
     
     func test_signup_show_error_mesasge_if_social_media_token_is_not_provided() {
@@ -46,7 +46,7 @@ class SignUpPresenterTests: XCTestCase {
         
         sut.signup(viewModel: makeSignupViewModel(socialMediaToken:nil))
         
-        XCTAssertEqual(alertViewSpy.viewModel,AlertViewModel(title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social"))
+        XCTAssertEqual(alertViewSpy.viewModel,makeAlertViewModel(title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social"))
     }
 
     func test_signup_show_call_email_validator_with_correct_email() {
@@ -69,11 +69,11 @@ class SignUpPresenterTests: XCTestCase {
         
            let sut = makeSut(alertView:alertViewSpy, emailValidator:emailValidatorSpy)
            
-           
+            
            emailValidatorSpy.simulateInvalidEmail()
            sut.signup(viewModel: makeSignupViewModel())
             
-           XCTAssertEqual(alertViewSpy.viewModel,AlertViewModel(title:"Falha na validação",message:"Seu email não está no formato correto"))
+           XCTAssertEqual(alertViewSpy.viewModel,makeAlertViewModel(message:"Seu email não está no formato correto"))
        }
 
 }
@@ -91,6 +91,10 @@ extension SignUpPresenterTests {
     func makeSignupViewModel(name:String? = "any name",email:String? = "email@etst.com",socialMediaToken:String? = "123", socialMediaType:String? = "facebook") -> SignupViewModel {
         
         return SignupViewModel(name:name,email:email,socialMediaToken:socialMediaToken,socialMediaType:socialMediaType)
+    }
+    
+    func makeAlertViewModel(title:String = "Falha na validação", message: String) -> AlertViewModel{
+        return AlertViewModel(title:title,message:message)
     }
      
     class AlertViewSpy : AlertView {
