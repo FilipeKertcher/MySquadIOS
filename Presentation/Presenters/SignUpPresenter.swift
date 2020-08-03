@@ -7,22 +7,28 @@
 //
 
 import Foundation
+import Domain
 
 public final class SignUpPresenter {
     
     private let alertView: AlertView
     private let emailValidator :EmailValidator
-    
-    public init(alertView:AlertView,emailValidator:EmailValidator) {
+    private let addAccount: AddAccount
+    public init(alertView:AlertView,emailValidator:EmailValidator,addAccount: AddAccount) {
         self.alertView = alertView
         self.emailValidator = emailValidator
+        self.addAccount = addAccount
     }
     
     public func signup(viewModel:SignupViewModel){
         if let (title, message) = validate(viewModel: viewModel) {
             alertView.showMessage(viewModel:AlertViewModel(title:title,message:message))
         } else {
+            let addAccountViewModel = AddAccountModel(name: viewModel.name!, email: viewModel.email!, socialMediaType: viewModel.socialMediaType!, token: viewModel.socialMediaToken!)
             
+            addAccount.add(addAccountModel: addAccountViewModel) { _ in
+            
+            }
         }
         
        

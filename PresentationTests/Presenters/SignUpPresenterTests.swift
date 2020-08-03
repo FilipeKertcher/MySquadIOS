@@ -8,7 +8,7 @@
 
 import XCTest
 import Presentation
-
+import Domain
 
 
 class SignUpPresenterTests: XCTestCase {
@@ -75,20 +75,31 @@ class SignUpPresenterTests: XCTestCase {
             
            XCTAssertEqual(alertViewSpy.viewModel,makeAlertViewModel(message:"Seu email não está no formato correto"))
        }
+    
+    
+    func test_signup_should_call_addAccount_with_correct_values() {
+        let addAccountSpy = AddAccountSpy()
+        
+        let sut = makeSut(addAccount:addAccountSpy)
+        
+        sut.signup(viewModel: makeSignupViewModel())
+         
+        XCTAssertEqual(addAccountSpy.addAccountModel,makeAddAccountModel())
+    }
 
 }
 
 extension SignUpPresenterTests {
     
     
-    func makeSut(alertView:AlertViewSpy = AlertViewSpy(),emailValidator:EmailValidatorSpy = EmailValidatorSpy()) -> SignUpPresenter {
+    func makeSut(alertView:AlertViewSpy = AlertViewSpy(),emailValidator:EmailValidatorSpy = EmailValidatorSpy(),addAccount:AddAccountSpy = AddAccountSpy()) -> SignUpPresenter {
         
-        let sut = SignUpPresenter(alertView: alertView,emailValidator:emailValidator )
+        let sut = SignUpPresenter(alertView: alertView,emailValidator:emailValidator,addAccount:addAccount )
        
         return sut
     }
     
-    func makeSignupViewModel(name:String? = "any name",email:String? = "email@etst.com",socialMediaToken:String? = "123", socialMediaType:String? = "facebook") -> SignupViewModel {
+    func makeSignupViewModel(name:String? = "Filipe Kertcher",email:String? = "filipekertcher97@gmail.com",socialMediaToken:String? = "123456", socialMediaType:String? = "FACEBOOK") -> SignupViewModel {
         
         return SignupViewModel(name:name,email:email,socialMediaToken:socialMediaToken,socialMediaType:socialMediaType)
     }
@@ -119,5 +130,17 @@ extension SignUpPresenterTests {
         func simulateInvalidEmail () {
             isValid = false
         }
+    }
+    
+    class AddAccountSpy : AddAccount {
+        var addAccountModel : AddAccountModel?
+        
+        func add(addAccountModel: AddAccountModel, completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
+            self.addAccountModel = addAccountModel
+        }
+        
+       
+        
+         
     }
 }

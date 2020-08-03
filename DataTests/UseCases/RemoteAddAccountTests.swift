@@ -73,10 +73,7 @@
         
        
         
-        func makeAddAccountModel()  -> AddAccountModel {
-            return AddAccountModel(name: "Filipe Kertcher", email: "filipekertcher97@gmail.com", socialMediaType: "FACEBOOK", token: "123456")
-        }
-        
+       
        
         
         func expect(_ sut:RemoteAddAccount, completeWith expectedResult: Result<AccountModel,DomainError>, when action: () -> Void,file:StaticString = #file, line: UInt = #line){

@@ -13,3 +13,7 @@ func makeAccountModel()  -> AccountModel {
     return AccountModel(_id:"any id",name: "Filipe Kertcher", email: "filipekertcher97@gmail.com", socialMediaType: "FACEBOOK", token: "123456")
 }
 
+func makeAddAccountModel()  -> AddAccountModel {
+           return AddAccountModel(name: "Filipe Kertcher", email: "filipekertcher97@gmail.com", socialMediaType: "FACEBOOK", token: "123456")
+}
+       
