@@ -29,10 +29,17 @@ class SignUpPresenter {
             alertView.showMessage(viewModel:AlertViewModel(title:"Falha na validação",message:"O Campo nome é obrigatório"))
         }
         
-        if viewModel.email == nil || viewModel.email!.isEmpty { 
+        if viewModel.email == nil || viewModel.email!.isEmpty {
             alertView.showMessage(viewModel:AlertViewModel(title:"Falha na validação",message:"O Campo email é obrigatório"))
         }
         
+        if viewModel.socialMediaToken == nil || viewModel.socialMediaToken!.isEmpty {
+            alertView.showMessage(viewModel:AlertViewModel(title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social"))
+        }
+        
+        if viewModel.socialMediaType == nil || viewModel.socialMediaType!.isEmpty {
+            alertView.showMessage(viewModel:AlertViewModel(title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social"))
+        }
     }
     
     
@@ -70,8 +77,28 @@ class SignupPresenterTests: XCTestCase {
         
         XCTAssertEqual(alertViewSpy.viewModel,AlertViewModel(title:"Falha na validação",message:"O Campo email é obrigatório"))
     }
+    
+    func test_signup_show_error_mesasge_if_social_media_token_is_not_provided() {
+        
+        
+        let (sut,alertViewSpy) = makeSut()
+        let signUpViewModel = SignupViewModel(name:"Filipe Kertcher",email:"filipe@email.com", socialMediaType:"facebook")
+        
+        sut.signup(viewModel: signUpViewModel)
+        
+        XCTAssertEqual(alertViewSpy.viewModel,AlertViewModel(title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social"))
+    }
 
-     
+    func test_signup_show_error_mesasge_if_social_media_type_is_not_provided() {
+        
+        
+        let (sut,alertViewSpy) = makeSut()
+        let signUpViewModel = SignupViewModel(name:"Filipe Kertcher",email:"filipe@email.com", socialMediaToken: "123")
+        
+        sut.signup(viewModel: signUpViewModel)
+        
+        XCTAssertEqual(alertViewSpy.viewModel,AlertViewModel(title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social"))
+    }
 
 }
 
