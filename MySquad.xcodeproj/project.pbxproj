@@ -22,6 +22,11 @@
 		EC2E08CC24D7BB68000E4E69 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2E08CB24D7BB68000E4E69 /* LoadingView.swift */; };
 		EC2E08CF24D7C18B000E4E69 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2E08CE24D7C18B000E4E69 /* SignUpViewModel.swift */; };
 		EC2E08D124D7C25F000E4E69 /* SignUpMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2E08D024D7C25F000E4E69 /* SignUpMapper.swift */; };
+		EC2E08D524D7C39C000E4E69 /* AlertViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2E08D424D7C39C000E4E69 /* AlertViewSpy.swift */; };
+		EC2E08D824D7C3D0000E4E69 /* EmailValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2E08D724D7C3D0000E4E69 /* EmailValidatorSpy.swift */; };
+		EC2E08DB24D7C3FA000E4E69 /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2E08DA24D7C3FA000E4E69 /* AddAccountSpy.swift */; };
+		EC2E08DD24D7C437000E4E69 /* LoadingViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2E08DC24D7C437000E4E69 /* LoadingViewSpy.swift */; };
+		EC2E08E024D7C4B5000E4E69 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2E08DF24D7C4B5000E4E69 /* TestFactories.swift */; };
 		EC51597C24C5149A001F550F /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51597B24C5149A001F550F /* AddAccount.swift */; };
 		EC51597E24C51522001F550F /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51597D24C51522001F550F /* AccountModel.swift */; };
 		EC51599A24C515E2001F550F /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC51599124C515E2001F550F /* Data.framework */; };
@@ -150,6 +155,11 @@
 		EC2E08CB24D7BB68000E4E69 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		EC2E08CE24D7C18B000E4E69 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		EC2E08D024D7C25F000E4E69 /* SignUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMapper.swift; sourceTree = "<group>"; };
+		EC2E08D424D7C39C000E4E69 /* AlertViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewSpy.swift; sourceTree = "<group>"; };
+		EC2E08D724D7C3D0000E4E69 /* EmailValidatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorSpy.swift; sourceTree = "<group>"; };
+		EC2E08DA24D7C3FA000E4E69 /* AddAccountSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountSpy.swift; sourceTree = "<group>"; };
+		EC2E08DC24D7C437000E4E69 /* LoadingViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSpy.swift; sourceTree = "<group>"; };
+		EC2E08DF24D7C4B5000E4E69 /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
 		EC51596324C5144F001F550F /* MySquad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MySquad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC51597324C51486001F550F /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC51597624C51486001F550F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -291,6 +301,10 @@
 		EC11B2FD24D791CA00CEC1A2 /* PresentationTests */ = {
 			isa = PBXGroup;
 			children = (
+				EC2E08DE24D7C4A2000E4E69 /* Helpers */,
+				EC2E08D924D7C3ED000E4E69 /* UseCases */,
+				EC2E08D624D7C3C4000E4E69 /* Validators */,
+				EC2E08D324D7C38E000E4E69 /* Views */,
 				EC2C26DA24D79F5500969F36 /* Presenters */,
 				EC11B30024D791CA00CEC1A2 /* Info.plist */,
 			);
@@ -320,7 +334,7 @@
 		EC2C26DA24D79F5500969F36 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				EC11B2FE24D791CA00CEC1A2 /* SignUpPresenterTests.swift */,
+				EC2E08D224D7C33A000E4E69 /* SignUp */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -338,6 +352,47 @@
 			children = (
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		EC2E08D224D7C33A000E4E69 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				EC11B2FE24D791CA00CEC1A2 /* SignUpPresenterTests.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		EC2E08D324D7C38E000E4E69 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC2E08D424D7C39C000E4E69 /* AlertViewSpy.swift */,
+				EC2E08DC24D7C437000E4E69 /* LoadingViewSpy.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EC2E08D624D7C3C4000E4E69 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				EC2E08D724D7C3D0000E4E69 /* EmailValidatorSpy.swift */,
+			);
+			path = Validators;
+			sourceTree = "<group>";
+		};
+		EC2E08D924D7C3ED000E4E69 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				EC2E08DA24D7C3FA000E4E69 /* AddAccountSpy.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		EC2E08DE24D7C4A2000E4E69 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EC2E08DF24D7C4B5000E4E69 /* TestFactories.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		EC51595924C5144F001F550F = {
@@ -881,8 +936,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC2E08D824D7C3D0000E4E69 /* EmailValidatorSpy.swift in Sources */,
+				EC2E08DB24D7C3FA000E4E69 /* AddAccountSpy.swift in Sources */,
+				EC2E08DD24D7C437000E4E69 /* LoadingViewSpy.swift in Sources */,
 				EC2C26DE24D7B18700969F36 /* AccountModelFactory.swift in Sources */,
 				EC11B2FF24D791CA00CEC1A2 /* SignUpPresenterTests.swift in Sources */,
+				EC2E08E024D7C4B5000E4E69 /* TestFactories.swift in Sources */,
+				EC2E08D524D7C39C000E4E69 /* AlertViewSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
