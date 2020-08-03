@@ -56,6 +56,18 @@ class SignUpPresenterTests: XCTestCase {
         
         XCTAssertEqual(emailValidatorSpy.email,signUpViewModel.email)
     }
+    
+    func test_signup_should_show_error_message_if_invalid_email_is_provided() {
+           
+           
+           let (sut, alertViewSpy, emailValidatorSpy) = makeSut()
+           let signUpViewModel = SignupViewModel(name:"Filipe Kertcher",email:"filipe@email.com", socialMediaToken: "123",socialMediaType:"facebook")
+           
+           emailValidatorSpy.isValid = false
+           sut.signup(viewModel: signUpViewModel)
+           
+           XCTAssertEqual(alertViewSpy.viewModel,AlertViewModel(title:"Falha na validação",message:"Seu email não está no formato correto"))
+       }
 
 }
 

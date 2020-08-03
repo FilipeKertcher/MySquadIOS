@@ -21,6 +21,8 @@ public final class SignUpPresenter {
     public func signup(viewModel:SignupViewModel){
         if let (title, message) = validate(viewModel: viewModel) {
             alertView.showMessage(viewModel:AlertViewModel(title:title,message:message))
+        } else {
+            
         }
         
        
@@ -43,7 +45,10 @@ public final class SignUpPresenter {
             return (title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social")
          }
         
-        _ = emailValidator.isValid(email:viewModel.email!) 
+        else if !emailValidator.isValid(email:viewModel.email!) {
+            return (title:"Falha na validação",message:"Seu email não está no formato correto")
+        }
+        
         
         return nil
     }
