@@ -7,68 +7,17 @@
 //
 
 import XCTest
+import Presentation
 
 
-struct SignupViewModel {
-      var name: String?;
-      var email : String?;
-      var socialMediaType: String?;
-      var socialMediaToken: String?;
-}
 
-class SignUpPresenter {
-    
-    private let alertView: AlertView
-    
-    init(alertView:AlertView) {
-        self.alertView = alertView
-    }
-    
-    func signup(viewModel:SignupViewModel){
-        if let (title, message) = validate(viewModel: viewModel) {
-            alertView.showMessage(viewModel:AlertViewModel(title:title,message:message))
-        }
-    }
-    
-    private func validate(viewModel: SignupViewModel) -> (title:String,message:String)? {
-        if viewModel.name == nil || viewModel.name!.isEmpty {
-            return (title:"Falha na validação",message:"O Campo nome é obrigatório")
-         }
-         
-         else if viewModel.email  == nil || viewModel.email!.isEmpty {
-             return (title:"Falha na validação",message:"O Campo email é obrigatório")
-         }
-         
-         else if viewModel.socialMediaToken == nil || viewModel.socialMediaToken!.isEmpty {
-            return (title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social")
-         }
-         
-        else if viewModel.socialMediaType == nil || viewModel.socialMediaType!.isEmpty {
-            return (title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social")
-         }
-        
-        return nil
-    }
-    
-    
-}
-
-protocol AlertView {
-    func showMessage(viewModel:AlertViewModel)
-}
-
-struct AlertViewModel : Equatable {
-    var title:String;
-    var message:String
-}
-
-class SignupPresenterTests: XCTestCase {
+class SignUpPresenterTests: XCTestCase {
 
     func test_signup_show_error_mesasge_if_name_is_not_provided() {
         
         
         let (sut,alertViewSpy) = makeSut()
-        let signUpViewModel = SignupViewModel(email:"123",socialMediaType:"facebook",socialMediaToken:"123")
+        let signUpViewModel = SignupViewModel(email:"facebook",socialMediaToken:"123",socialMediaType: "facebook")
         
         sut.signup(viewModel: signUpViewModel)
         
@@ -79,7 +28,7 @@ class SignupPresenterTests: XCTestCase {
         
         
         let (sut,alertViewSpy) = makeSut()
-        let signUpViewModel = SignupViewModel(name:"Filipe Kertcher",socialMediaType:"facebook",socialMediaToken:"123")
+        let signUpViewModel = SignupViewModel(name:"Filipe Kertcher",socialMediaToken:"123", socialMediaType:"facebook")
         
         sut.signup(viewModel: signUpViewModel)
         
@@ -110,7 +59,7 @@ class SignupPresenterTests: XCTestCase {
 
 }
 
-extension SignupPresenterTests {
+extension SignUpPresenterTests {
     
     
     func makeSut() -> (sut:SignUpPresenter, alertViewSpy: AlertViewSpy){
