@@ -25,7 +25,7 @@ class SignUpPresenterTests: XCTestCase {
             exp.fulfill()
         }
         
-        sut.signup(viewModel: makeSignupViewModel(name:nil))
+        sut.signup(viewModel: makeSignUpViewModel(name:nil))
         
         wait(for:[exp],timeout: 1)
         
@@ -48,7 +48,7 @@ class SignUpPresenterTests: XCTestCase {
             exp.fulfill()
         }
         
-        sut.signup(viewModel: makeSignupViewModel(email:nil))
+        sut.signup(viewModel: makeSignUpViewModel(email:nil))
         
         wait(for:[exp],timeout: 1)
     }
@@ -64,7 +64,7 @@ class SignUpPresenterTests: XCTestCase {
             exp.fulfill()
         }
         
-        sut.signup(viewModel: makeSignupViewModel(socialMediaToken:nil))
+        sut.signup(viewModel: makeSignUpViewModel(socialMediaToken:nil))
         
         wait(for:[exp],timeout: 1)
     }
@@ -75,7 +75,7 @@ class SignUpPresenterTests: XCTestCase {
         
         let sut = makeSut(emailValidator:emailValidatorSpy)
         
-        let signUpViewModel = makeSignupViewModel()
+        let signUpViewModel = makeSignUpViewModel()
         
         sut.signup(viewModel: signUpViewModel)
         
@@ -94,7 +94,7 @@ class SignUpPresenterTests: XCTestCase {
             exp.fulfill()
         }
         emailValidatorSpy.simulateInvalidEmail()
-        sut.signup(viewModel: makeSignupViewModel())
+        sut.signup(viewModel: makeSignUpViewModel())
         
         wait(for:[exp],timeout: 1)
     }
@@ -104,7 +104,7 @@ class SignUpPresenterTests: XCTestCase {
         let addAccountSpy = AddAccountSpy()
         let sut = makeSut(addAccount:addAccountSpy)
         
-        sut.signup(viewModel: makeSignupViewModel())
+        sut.signup(viewModel: makeSignUpViewModel())
         
         XCTAssertEqual(addAccountSpy.addAccountModel,makeAddAccountModel())
     }
@@ -123,7 +123,7 @@ class SignUpPresenterTests: XCTestCase {
             exp.fulfill()
         }
         
-        sut.signup(viewModel: makeSignupViewModel())
+        sut.signup(viewModel: makeSignUpViewModel())
         addAccountSpy.completeWithError(error: .unexpected)
         wait(for:[exp],timeout: 1)
         
@@ -142,7 +142,7 @@ class SignUpPresenterTests: XCTestCase {
             
             exp.fulfill()
         }
-        sut.signup(viewModel: makeSignupViewModel())
+        sut.signup(viewModel: makeSignUpViewModel())
         
         wait(for: [exp], timeout: 1)
         
@@ -174,7 +174,7 @@ class SignUpPresenterTests: XCTestCase {
             exp.fulfill()
         }
         
-        sut.signup(viewModel: makeSignupViewModel())
+        sut.signup(viewModel: makeSignUpViewModel())
         addAccountSpy.completeWithAccount(account: makeAccountModel())
         wait(for:[exp],timeout: 1)
         
@@ -193,9 +193,9 @@ extension SignUpPresenterTests {
         return sut
     }
     
-    func makeSignupViewModel(name:String? = "Filipe Kertcher",email:String? = "filipekertcher97@gmail.com",socialMediaToken:String? = "123456", socialMediaType:String? = "FACEBOOK") -> SignupViewModel {
+    func makeSignUpViewModel(name:String? = "Filipe Kertcher",email:String? = "filipekertcher97@gmail.com",socialMediaToken:String? = "123456", socialMediaType:String? = "FACEBOOK") -> SignUpViewModel {
         
-        return SignupViewModel(name:name,email:email,socialMediaToken:socialMediaToken,socialMediaType:socialMediaType)
+        return SignUpViewModel(name:name,email:email,socialMediaToken:socialMediaToken,socialMediaType:socialMediaType)
     }
     
     func makeAlertViewModel(title:String = "Falha na validação", message: String) -> AlertViewModel{
