@@ -29,6 +29,10 @@ class SignUpPresenter {
             alertView.showMessage(viewModel:AlertViewModel(title:"Falha na validação",message:"O Campo nome é obrigatório"))
         }
         
+        if viewModel.email == nil || viewModel.email!.isEmpty { 
+            alertView.showMessage(viewModel:AlertViewModel(title:"Falha na validação",message:"O Campo email é obrigatório"))
+        }
+        
     }
     
     
@@ -56,7 +60,16 @@ class SignupPresenterTests: XCTestCase {
         XCTAssertEqual(alertViewSpy.viewModel,AlertViewModel(title:"Falha na validação",message:"O Campo nome é obrigatório"))
     }
     
-    
+    func test_signup_show_error_mesasge_if_email_is_not_provided() {
+        
+        
+        let (sut,alertViewSpy) = makeSut()
+        let signUpViewModel = SignupViewModel(name:"Filipe Kertcher",socialMediaType:"facebook",socialMediaToken:"123")
+        
+        sut.signup(viewModel: signUpViewModel)
+        
+        XCTAssertEqual(alertViewSpy.viewModel,AlertViewModel(title:"Falha na validação",message:"O Campo email é obrigatório"))
+    }
 
      
 
