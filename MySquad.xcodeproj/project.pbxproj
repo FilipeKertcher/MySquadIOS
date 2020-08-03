@@ -279,7 +279,7 @@
 		EC11B2FD24D791CA00CEC1A2 /* PresentationTests */ = {
 			isa = PBXGroup;
 			children = (
-				EC11B2FE24D791CA00CEC1A2 /* SignUpPresenterTests.swift */,
+				EC2C26DA24D79F5500969F36 /* Presenters */,
 				EC11B30024D791CA00CEC1A2 /* Info.plist */,
 			);
 			path = PresentationTests;
@@ -297,6 +297,14 @@
 			isa = PBXGroup;
 			children = (
 				EC2C26D424D79D2000969F36 /* SignUpPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		EC2C26DA24D79F5500969F36 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				EC11B2FE24D791CA00CEC1A2 /* SignUpPresenterTests.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
