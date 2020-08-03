@@ -46,21 +46,33 @@ struct AlertViewModel : Equatable {
 class SignupPresenterTests: XCTestCase {
 
     func test_signup_show_error_mesasge_if_name_is_not_provided() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        let alertViewSpy = AlertViewSpy()
-        let sut = SignUpPresenter(alertView: alertViewSpy )
+        
+        
+        let (sut,alertViewSpy) = makeSut()
         let signUpViewModel = SignupViewModel(email:"123",socialMediaType:"facebook",socialMediaToken:"123")
         
         sut.signup(viewModel: signUpViewModel)
         
         XCTAssertEqual(alertViewSpy.viewModel,AlertViewModel(title:"Falha na validação",message:"O Campo nome é obrigatório"))
     }
+    
+    
 
      
 
 }
 
 extension SignupPresenterTests {
+    
+    
+    func makeSut() -> (sut:SignUpPresenter, alertViewSpy: AlertViewSpy){
+        let alertViewSpy = AlertViewSpy()
+        let sut = SignUpPresenter(alertView: alertViewSpy )
+        
+        return (
+            sut,alertViewSpy
+        )
+    }
     class AlertViewSpy : AlertView {
         
         var viewModel: AlertViewModel?
