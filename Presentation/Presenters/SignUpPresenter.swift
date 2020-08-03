@@ -26,7 +26,9 @@ public final class SignUpPresenter {
         } else {
             let addAccountViewModel = AddAccountModel(name: viewModel.name!, email: viewModel.email!, socialMediaType: viewModel.socialMediaType!, token: viewModel.socialMediaToken!)
             
-            addAccount.add(addAccountModel: addAccountViewModel) { result in
+            addAccount.add(addAccountModel: addAccountViewModel) { [weak self] result in
+                guard let self = self else { return }
+                
                 switch result {
                 case .failure: self.alertView.showMessage(viewModel:AlertViewModel(title:"Erro",message:"Algo inesperado aconteceu, tente novamente em alguns instantes."))
                 case .success : break;
