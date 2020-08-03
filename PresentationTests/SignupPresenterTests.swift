@@ -25,21 +25,29 @@ class SignUpPresenter {
     }
     
     func signup(viewModel:SignupViewModel){
+        if let (title, message) = validate(viewModel: viewModel) {
+            alertView.showMessage(viewModel:AlertViewModel(title:title,message:message))
+        }
+    }
+    
+    private func validate(viewModel: SignupViewModel) -> (title:String,message:String)? {
         if viewModel.name == nil || viewModel.name!.isEmpty {
-            alertView.showMessage(viewModel:AlertViewModel(title:"Falha na validação",message:"O Campo nome é obrigatório"))
-        }
+            return (title:"Falha na validação",message:"O Campo nome é obrigatório")
+         }
+         
+         else if viewModel.email  == nil || viewModel.email!.isEmpty {
+             return (title:"Falha na validação",message:"O Campo email é obrigatório")
+         }
+         
+         else if viewModel.socialMediaToken == nil || viewModel.socialMediaToken!.isEmpty {
+            return (title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social")
+         }
+         
+        else if viewModel.socialMediaType == nil || viewModel.socialMediaType!.isEmpty {
+            return (title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social")
+         }
         
-        if viewModel.email == nil || viewModel.email!.isEmpty {
-            alertView.showMessage(viewModel:AlertViewModel(title:"Falha na validação",message:"O Campo email é obrigatório"))
-        }
-        
-        if viewModel.socialMediaToken == nil || viewModel.socialMediaToken!.isEmpty {
-            alertView.showMessage(viewModel:AlertViewModel(title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social"))
-        }
-        
-        if viewModel.socialMediaType == nil || viewModel.socialMediaType!.isEmpty {
-            alertView.showMessage(viewModel:AlertViewModel(title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social"))
-        }
+        return nil
     }
     
     
@@ -113,6 +121,8 @@ extension SignupPresenterTests {
             sut,alertViewSpy
         )
     }
+    
+     
     class AlertViewSpy : AlertView {
         
         var viewModel: AlertViewModel?
