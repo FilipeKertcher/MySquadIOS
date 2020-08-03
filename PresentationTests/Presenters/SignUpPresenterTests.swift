@@ -128,14 +128,26 @@ class SignUpPresenterTests: XCTestCase {
         wait(for:[exp],timeout: 1)
         
     }
+    
+    func test_signup_should_loading_before_call_add_account() {
+        
+        let loadingViewSpy = LoadingViewSpy()
+    
+        let sut = makeSut(loadingView:loadingViewSpy)
+        
+        sut.signup(viewModel: makeSignupViewModel())
+        
+        
+        XCTAssertEqual(loadingViewSpy.viewModel,LoadingViewModel(isLoading: true))
+    }
 }
 
 extension SignUpPresenterTests {
     
     
-    func makeSut(alertView:AlertViewSpy = AlertViewSpy(),emailValidator:EmailValidatorSpy = EmailValidatorSpy(),addAccount:AddAccountSpy = AddAccountSpy()) -> SignUpPresenter {
+    func makeSut(alertView:AlertViewSpy = AlertViewSpy(),emailValidator:EmailValidatorSpy = EmailValidatorSpy(),addAccount:AddAccountSpy = AddAccountSpy(),loadingView:LoadingView = LoadingViewSpy() ) -> SignUpPresenter {
         
-        let sut = SignUpPresenter(alertView: alertView,emailValidator:emailValidator,addAccount:addAccount )
+        let sut = SignUpPresenter(alertView: alertView,emailValidator:emailValidator,addAccount:addAccount,loadingView:loadingView )
         
         return sut
     }
@@ -189,6 +201,17 @@ extension SignUpPresenterTests {
         
         func completeWithError(error:DomainError){
             completion?(.failure(error));
+        }
+        
+        
+    }
+    
+    class LoadingViewSpy : LoadingView {
+        
+        var viewModel : LoadingViewModel?
+        
+        func display(viewModel: LoadingViewModel) {
+            self.viewModel = viewModel
         }
         
         
