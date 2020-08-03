@@ -12,6 +12,8 @@
 		EC11B2D824CE4C9E00CEC1A2 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC11B2D724CE4C9E00CEC1A2 /* URLProtocolStub.swift */; };
 		EC11B2E024CE4FBD00CEC1A2 /* addAccountIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC11B2DF24CE4FBD00CEC1A2 /* addAccountIntegrationTests.swift */; };
 		EC11B2E224CE4FBD00CEC1A2 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC51599124C515E2001F550F /* Data.framework */; };
+		EC11B2FA24D791CA00CEC1A2 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC11B2F124D791CA00CEC1A2 /* Presentation.framework */; };
+		EC11B2FF24D791CA00CEC1A2 /* SignupPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC11B2FE24D791CA00CEC1A2 /* SignupPresenterTests.swift */; };
 		EC51597C24C5149A001F550F /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51597B24C5149A001F550F /* AddAccount.swift */; };
 		EC51597E24C51522001F550F /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51597D24C51522001F550F /* AccountModel.swift */; };
 		EC51599A24C515E2001F550F /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC51599124C515E2001F550F /* Data.framework */; };
@@ -60,6 +62,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = EC51597224C51486001F550F;
 			remoteInfo = Domain;
+		};
+		EC11B2FB24D791CA00CEC1A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC51595A24C5144F001F550F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC11B2F024D791CA00CEC1A2;
+			remoteInfo = Presentation;
 		};
 		EC51599B24C515E2001F550F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -122,6 +131,11 @@
 		EC11B2DD24CE4FBD00CEC1A2 /* UseCasesIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UseCasesIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC11B2DF24CE4FBD00CEC1A2 /* addAccountIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addAccountIntegrationTests.swift; sourceTree = "<group>"; };
 		EC11B2E124CE4FBD00CEC1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC11B2F124D791CA00CEC1A2 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC11B2F424D791CA00CEC1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC11B2F924D791CA00CEC1A2 /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC11B2FE24D791CA00CEC1A2 /* SignupPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenterTests.swift; sourceTree = "<group>"; };
+		EC11B30024D791CA00CEC1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC51596324C5144F001F550F /* MySquad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MySquad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC51597324C51486001F550F /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC51597624C51486001F550F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,6 +168,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC11B2E224CE4FBD00CEC1A2 /* Data.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC11B2EE24D791CA00CEC1A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC11B2F624D791CA00CEC1A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC11B2FA24D791CA00CEC1A2 /* Presentation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +262,23 @@
 			path = UseCasesIntegrationTests;
 			sourceTree = "<group>";
 		};
+		EC11B2F224D791CA00CEC1A2 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				EC11B2F424D791CA00CEC1A2 /* Info.plist */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		EC11B2FD24D791CA00CEC1A2 /* PresentationTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC11B2FE24D791CA00CEC1A2 /* SignupPresenterTests.swift */,
+				EC11B30024D791CA00CEC1A2 /* Info.plist */,
+			);
+			path = PresentationTests;
+			sourceTree = "<group>";
+		};
 		EC51595924C5144F001F550F = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +288,8 @@
 				ECF9D46B24CE2C7500C7800A /* Infra */,
 				ECF9D47624CE2C7500C7800A /* InfraTests */,
 				EC11B2DE24CE4FBD00CEC1A2 /* UseCasesIntegrationTests */,
+				EC11B2F224D791CA00CEC1A2 /* Presentation */,
+				EC11B2FD24D791CA00CEC1A2 /* PresentationTests */,
 				EC51596424C5144F001F550F /* Products */,
 				EC5159A824C51629001F550F /* Frameworks */,
 			);
@@ -257,6 +305,8 @@
 				ECF9D46A24CE2C7400C7800A /* Infra.framework */,
 				ECF9D47224CE2C7500C7800A /* InfraTests.xctest */,
 				EC11B2DD24CE4FBD00CEC1A2 /* UseCasesIntegrationTests.xctest */,
+				EC11B2F124D791CA00CEC1A2 /* Presentation.framework */,
+				EC11B2F924D791CA00CEC1A2 /* PresentationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -397,6 +447,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		EC11B2EC24D791CA00CEC1A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC51595E24C5144F001F550F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -446,6 +503,42 @@
 			name = UseCasesIntegrationTests;
 			productName = UseCasesIntegrationTests;
 			productReference = EC11B2DD24CE4FBD00CEC1A2 /* UseCasesIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EC11B2F024D791CA00CEC1A2 /* Presentation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC11B30624D791CA00CEC1A2 /* Build configuration list for PBXNativeTarget "Presentation" */;
+			buildPhases = (
+				EC11B2EC24D791CA00CEC1A2 /* Headers */,
+				EC11B2ED24D791CA00CEC1A2 /* Sources */,
+				EC11B2EE24D791CA00CEC1A2 /* Frameworks */,
+				EC11B2EF24D791CA00CEC1A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Presentation;
+			productName = Presentation;
+			productReference = EC11B2F124D791CA00CEC1A2 /* Presentation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EC11B2F824D791CA00CEC1A2 /* PresentationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC11B30724D791CA00CEC1A2 /* Build configuration list for PBXNativeTarget "PresentationTests" */;
+			buildPhases = (
+				EC11B2F524D791CA00CEC1A2 /* Sources */,
+				EC11B2F624D791CA00CEC1A2 /* Frameworks */,
+				EC11B2F724D791CA00CEC1A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC11B2FC24D791CA00CEC1A2 /* PBXTargetDependency */,
+			);
+			name = PresentationTests;
+			productName = PresentationTests;
+			productReference = EC11B2F924D791CA00CEC1A2 /* PresentationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		EC51596224C5144F001F550F /* MySquad */ = {
@@ -576,6 +669,12 @@
 					EC11B2DC24CE4FBD00CEC1A2 = {
 						CreatedOnToolsVersion = 11.3;
 					};
+					EC11B2F024D791CA00CEC1A2 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					EC11B2F824D791CA00CEC1A2 = {
+						CreatedOnToolsVersion = 11.3;
+					};
 					EC51596224C5144F001F550F = {
 						CreatedOnToolsVersion = 11.3;
 					};
@@ -622,12 +721,28 @@
 				ECF9D46924CE2C7400C7800A /* Infra */,
 				ECF9D47124CE2C7500C7800A /* InfraTests */,
 				EC11B2DC24CE4FBD00CEC1A2 /* UseCasesIntegrationTests */,
+				EC11B2F024D791CA00CEC1A2 /* Presentation */,
+				EC11B2F824D791CA00CEC1A2 /* PresentationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EC11B2DB24CE4FBD00CEC1A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC11B2EF24D791CA00CEC1A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC11B2F724D791CA00CEC1A2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -684,6 +799,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC11B2E024CE4FBD00CEC1A2 /* addAccountIntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC11B2ED24D791CA00CEC1A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC11B2F524D791CA00CEC1A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC11B2FF24D791CA00CEC1A2 /* SignupPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +898,11 @@
 			target = EC51597224C51486001F550F /* Domain */;
 			targetProxy = EC11B2EA24CE4FEB00CEC1A2 /* PBXContainerItemProxy */;
 		};
+		EC11B2FC24D791CA00CEC1A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC11B2F024D791CA00CEC1A2 /* Presentation */;
+			targetProxy = EC11B2FB24D791CA00CEC1A2 /* PBXContainerItemProxy */;
+		};
 		EC51599C24C515E2001F550F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EC51599024C515E2001F550F /* Data */;
@@ -825,6 +960,98 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.UseCasesIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		EC11B30224D791CA00CEC1A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Presentation/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.Presentation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EC11B30324D791CA00CEC1A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Presentation/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.Presentation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		EC11B30424D791CA00CEC1A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				INFOPLIST_FILE = PresentationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.PresentationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EC11B30524D791CA00CEC1A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UCB8QM76XU;
+				INFOPLIST_FILE = PresentationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = Kertcher.PresentationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
@@ -1256,6 +1483,24 @@
 			buildConfigurations = (
 				EC11B2E624CE4FBD00CEC1A2 /* Debug */,
 				EC11B2E724CE4FBD00CEC1A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC11B30624D791CA00CEC1A2 /* Build configuration list for PBXNativeTarget "Presentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC11B30224D791CA00CEC1A2 /* Debug */,
+				EC11B30324D791CA00CEC1A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC11B30724D791CA00CEC1A2 /* Build configuration list for PBXNativeTarget "PresentationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC11B30424D791CA00CEC1A2 /* Debug */,
+				EC11B30524D791CA00CEC1A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
