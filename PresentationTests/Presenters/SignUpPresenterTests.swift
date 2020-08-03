@@ -12,12 +12,12 @@ import Domain
 
 
 class SignUpPresenterTests: XCTestCase {
-
+    
     func test_signup_show_error_mesasge_if_name_is_not_provided() {
         
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView:alertViewSpy)
-       
+        
         
         sut.signup(viewModel: makeSignupViewModel(name:nil))
         
@@ -29,7 +29,7 @@ class SignUpPresenterTests: XCTestCase {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView:alertViewSpy)
         
-       
+        
         
         sut.signup(viewModel: makeSignupViewModel(email:nil))
         
@@ -48,7 +48,7 @@ class SignUpPresenterTests: XCTestCase {
         
         XCTAssertEqual(alertViewSpy.viewModel,makeAlertViewModel(title:"Falha na autenticação",message:"Não conseguimos nos autenticar com sua rede social"))
     }
-
+    
     func test_signup_show_call_email_validator_with_correct_email() {
         
         let emailValidatorSpy = EmailValidatorSpy()
@@ -63,18 +63,18 @@ class SignUpPresenterTests: XCTestCase {
     }
     
     func test_signup_should_show_error_message_if_invalid_email_is_provided() {
-           
-           let alertViewSpy = AlertViewSpy()
-           let emailValidatorSpy = EmailValidatorSpy()
         
-           let sut = makeSut(alertView:alertViewSpy, emailValidator:emailValidatorSpy)
-           
-            
-           emailValidatorSpy.simulateInvalidEmail()
-           sut.signup(viewModel: makeSignupViewModel())
-            
-           XCTAssertEqual(alertViewSpy.viewModel,makeAlertViewModel(message:"Seu email não está no formato correto"))
-       }
+        let alertViewSpy = AlertViewSpy()
+        let emailValidatorSpy = EmailValidatorSpy()
+        
+        let sut = makeSut(alertView:alertViewSpy, emailValidator:emailValidatorSpy)
+        
+        
+        emailValidatorSpy.simulateInvalidEmail()
+        sut.signup(viewModel: makeSignupViewModel())
+        
+        XCTAssertEqual(alertViewSpy.viewModel,makeAlertViewModel(message:"Seu email não está no formato correto"))
+    }
     
     
     func test_signup_should_call_addAccount_with_correct_values() {
@@ -83,10 +83,22 @@ class SignUpPresenterTests: XCTestCase {
         let sut = makeSut(addAccount:addAccountSpy)
         
         sut.signup(viewModel: makeSignupViewModel())
-         
+        
         XCTAssertEqual(addAccountSpy.addAccountModel,makeAddAccountModel())
     }
-
+    
+    
+    func test_signup_should_show_error_message_if_add_account_fails() {
+        
+        let alertViewSpy = AlertViewSpy()
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSut(alertView:alertViewSpy,addAccount: addAccountSpy)
+        
+        sut.signup(viewModel: makeSignupViewModel())
+        addAccountSpy.completeWithError(error: .unexpected)
+        
+        XCTAssertEqual(alertViewSpy.viewModel,makeAlertViewModel(title:"Erro", message:"Algo inesperado aconteceu, tente novamente em alguns instantes."))
+    }
 }
 
 extension SignUpPresenterTests {
@@ -95,7 +107,7 @@ extension SignUpPresenterTests {
     func makeSut(alertView:AlertViewSpy = AlertViewSpy(),emailValidator:EmailValidatorSpy = EmailValidatorSpy(),addAccount:AddAccountSpy = AddAccountSpy()) -> SignUpPresenter {
         
         let sut = SignUpPresenter(alertView: alertView,emailValidator:emailValidator,addAccount:addAccount )
-       
+        
         return sut
     }
     
@@ -107,7 +119,7 @@ extension SignUpPresenterTests {
     func makeAlertViewModel(title:String = "Falha na validação", message: String) -> AlertViewModel{
         return AlertViewModel(title:title,message:message)
     }
-     
+    
     class AlertViewSpy : AlertView {
         
         var viewModel: AlertViewModel?
@@ -134,13 +146,17 @@ extension SignUpPresenterTests {
     
     class AddAccountSpy : AddAccount {
         var addAccountModel : AddAccountModel?
+        var completion : ((Result<AccountModel, DomainError>) -> Void)? = nil
         
         func add(addAccountModel: AddAccountModel, completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
             self.addAccountModel = addAccountModel
+            self.completion = completion
         }
         
-       
+        func completeWithError(error:DomainError){
+            completion?(.failure(error));
+        }
         
-         
+        
     }
 }
