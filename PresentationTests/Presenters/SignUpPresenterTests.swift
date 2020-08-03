@@ -70,7 +70,7 @@ class SignUpPresenterTests: XCTestCase {
            let sut = makeSut(alertView:alertViewSpy, emailValidator:emailValidatorSpy)
            
            
-           emailValidatorSpy.isValid = false
+           emailValidatorSpy.simulateInvalidEmail()
            sut.signup(viewModel: makeSignupViewModel())
             
            XCTAssertEqual(alertViewSpy.viewModel,AlertViewModel(title:"Falha na validação",message:"Seu email não está no formato correto"))
@@ -110,6 +110,10 @@ extension SignUpPresenterTests {
         func isValid(email:String) -> Bool {
             self.email = email
             return isValid
+        }
+        
+        func simulateInvalidEmail () {
+            isValid = false
         }
     }
 }
