@@ -26,7 +26,7 @@ public final class SignUpPresenter {
         if let (title, message) = validate(viewModel: viewModel) {
             alertView.showMessage(viewModel:AlertViewModel(title:title,message:message))
         } else {
-            let addAccountViewModel = AddAccountModel(name: viewModel.name!, email: viewModel.email!, socialMediaType: viewModel.socialMediaType!, token: viewModel.socialMediaToken!)
+            let addAccountViewModel = SignUpMapper.toAddAccountModel(viewModel: viewModel)
             
             loadingView.display(viewModel: LoadingViewModel(isLoading: true))
             addAccount.add(addAccountModel: addAccountViewModel) { [weak self] result in
